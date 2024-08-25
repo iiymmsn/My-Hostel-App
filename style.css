@@ -19,18 +19,24 @@ body {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     background-color: #eab1f1;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1; /* Ensure the container is above the video */
+    height: 80%; /* Adjust height to fit the content centrally */
+    width: 80%; /* Optional: Adjust the width if needed */
 }
 
 #reader {
     width: 100%;
-    max-width: 1500px;
-    margin: auto;
+    max-width: 500px; /* Adjust the maximum width for QR reader */
+    margin: 20px 0; /* Add margin to separate from other elements */
 }
 
 #result {
@@ -44,7 +50,7 @@ body {
     border: 2px solid #000;
     width: 500px;
     height: 500px;
-    margin: auto;
+    margin: 20px 0; /* Add margin to separate from other elements */
 }
 
 .qr-box::before {
@@ -57,6 +63,7 @@ body {
     background: red;
     animation: scan 1.5s infinite;
 }
+
 button {
     padding: 10px 20px;
     font-size: 1em;
@@ -67,13 +74,15 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    
+    margin-top: 20px; /* Space between button and other elements */
 }
+
+button:hover {
+    background-color: #ff6f61;
+}
+
 @keyframes scan {
     0% { transform: translateY(-50%); }
     50% { transform: translateY(50%); }
     100% { transform: translateY(-50%); }
-}
-button:hover {
-    background-color: #ff6f61;
 }
